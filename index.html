@@ -1,20 +1,280 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/head.html', {
-    title: 'FromBoard Delivery'
-})
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+
+    <title>FromBoard Delivery</title>
+</head>
 <body>
-    @@include('html/header.html', {})
+    <header class="header">
+
+    <div class="overlay"></div>
+
+    <div class="header__inner">
+
+        <div class="header__wrapper">
+
+            <div class="logo logo--header">
+                <a class="logo__link" href="#"><picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png" alt="FromBoard Delivery"></picture></a>
+                <span class="logo__txt">FromBoard Delivery</span>
+                <p class="logo__protection">2023 © Ни одно право не защищено, копируйте сколько влезет</p>
+            </div>
+
+            <!-- <div class="burger"> -->
+            <input class="burger__input" id="burger-input" type="checkbox" aria-label="Бургер меню">
+            <label class="burger__label" for="burger-input">
+                <span class="burger__line"></span>
+            </label>
+            <!-- </div> -->
+
+            <p class="header__info">
+                <span class="header__span">Доставляем товары<br class="header__info--br"> из заграницы в Россию</span>
+                <span class="header__span">Стоимость от 550 рублей<br class="header__info--br"> за заказ</span>
+                <span class="header__span">1 $ = 93 ₽ | 1 € = 99 ₽ | 1 ¥ = 13 ₽</span>
+            </p>
+
+            <div class="phone phone--header">
+                <span class="phone__number">+7 (800) 123 45-67</span>
+                <span class="phone__info">Звонки по России бесплатны</span>
+            </div>
+
+            <nav class="menu menu--header">
+                <ul class="menu__list">
+                    <li class="menu__item current"><a class="menu__link" href="#">Калькулятор</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">О нас</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Гарантии</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Отзывы</a></li>
+                    <li class="menu__item"><a class="menu__link button button--header" href="#">Оставить заявку</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
     <main class="main">
         <div class="container">
-            @@include('html/delivery.html', {})
-            @@include('html/advantages.html', {})
-            @@include('html/guarantees.html', {})
-            @@include('html/reviews.html', {})
-            @@include('html/questions.html', {})
+            <section class="delivery">
+    <div class="delivery__inner">
+        <div class="delivery__content">
+            <div class="delivery__info">
+                <h1 class="title title--delivery">Без проблемная доставка купленных вещей из США, Европы и Азии<br class="delivery__title-br"> в Россию</h1>
+                <p class="delivery__txt">Сэкономьте на покупках и наслаждайтесь мировыми брендами —<br class="delivery__txt-br"> наш сервис позволяет вам легко и удобно заказывать товары со всего мира и получать их в России</p>
+            </div>
+            <picture class="delivery__picture">
+                <!-- <source media="(min-width: 1200px)" srcset="img/delivery-tablet.jpg"> -->
+                <source media="(max-width: 808px)" srcset="img/delivery-tablet.jpg">
+                <img class="delivery__img" src="img/delivery.jpg" alt="Работник упаковывает посылку">
+            </picture>
+        </div>
+        <div class="calculator">
+            <h3 class="title title--calculator">Калькулятор доставки</h3>
+            <p class="calculator__txt">Посчитайте, сколько будет стоить перевозка покупки из зарубежа</p>
+            <form class="calculator__form" action="#">
+                <input id="calculator__firstname" class="calculator__input calculator__input--big" type="text" placeholder="Имя"><label for="calculator__firstname" class="calculator__label">Имя:</label>
+                <input id="calculator__email" class="calculator__input" type="email" placeholder="Почта"><label for="calculator__email" class="calculator__label">Почта:</label>
+                <input id="calculator__phone" class="calculator__input" type="tel" placeholder="Телефон"><label for="calculator__phone" class="calculator__label">Телефон:</label>
+                <input id="calculator__area" class="calculator__input" type="text" placeholder="Общая площадь, м²"><label for="calculator__area" class="calculator__label">Общая площадь, м²:</label>
+                <input id="calculator__weight" class="calculator__input" type="text" placeholder="Вес, кг"><label for="calculator__weight" class="calculator__label">Вес, кг:</label>
+                <input id="calculator__country" class="calculator__input" type="text" placeholder="Страна покупки"><label for="calculator__country" class="calculator__label">Страна покупки:</label>
+                <input id="calculator__purchase" class="calculator__input" type="text" placeholder="Город покупки"><label for="calculator__purchase" class="calculator__label">Город покупки:</label>
+                <input id="calculator__oblast" class="calculator__input" type="text" placeholder="Область доставки"><label for="calculator__oblast" class="calculator__label">Область доставки:</label>
+                <input id="calculator__delivery" class="calculator__input" type="text" placeholder="Город доставки"><label for="calculator__delivery" class="calculator__label">Город доставки:</label>
+                <input id="calculator__delivery" class="button button--calculator" type="submit" value="Заказать расчёт">
+            </form>
+        </div>
+    </div>
+</section>
+            <section class="advantages">
+    <div class="advantages__inner">
+        <h2 class="title title--advantages">Наши преимущества</h2>
+        <ul class="advantages__list">
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-customs-clearance" src="img/icon/icon-board.svg" alt="Растоможка груза">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Растоможка груза</h3>
+                    <p class="advantages__txt">Мы берём на себя все формальности<br class="advantages__txt--br"> и бумажную волокиту, связанную<br class="advantages__txt--br"> с растаможкой груза</p>
+                </div>
+            </li>
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-box" src="img/icon/icon-package.svg" alt="Надёжная упаковка">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Надёжная упаковка</h3>
+                    <p class="advantages__txt">Все товары упаковываются нашими специалистами с особым вниманием<br class="advantages__txt--br"> к деталям, гарантируя, что они дойдут<br class="advantages__txt--br"> в безопасности и в отличном состоянии</p>
+                </div>
+            </li>
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-delivery" src="img/icon/icon-delivery.svg" alt="Быстро и выгодно">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Быстро и выгодно</h3>
+                    <p class="advantages__txt">Мы предлагаем быструю и выгодную доставку, чтобы вы могли насладиться покупками как можно скорее.</p>
+                </div>
+            </li>
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-services" src="img/icon/icon-bestsupport.svg" alt="Удобный сервис">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Удобный сервис</h3>
+                    <p class="advantages__txt">Стремимся сделать процесс доставки максимально удобным для вас, чтобы опыт остался приятным и беззаботным</p>
+                </div>
+            </li>
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-clear-info" src="img/icon/icon-clearinfo.svg" alt="Прозрачность работы">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Прозрачность работы</h3>
+                    <p class="advantages__txt">Мы предоставляем полный контроль<br class="advantages__txt--br"> над каждым этапом доставки, от момента заказа до момента прибытия заказа</p>
+                </div>
+            </li>
+            <li class="advantages__item">
+                <div class="advantages__img-container">
+                    <img class="advantages__img icon-garantee" src="img/icon/icon-garantee.svg" alt="Страхование груза">
+                </div>
+                <div class="advantages__info">
+                    <h3 class="advantages__caption">Страхование груза</h3>
+                    <p class="advantages__txt">Наше страхование обеспечивает полную защиту и покрытие почти все неприятные и неожиданные ситуации</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+            <section class="guarantees">
+    <div class="guarantees__inner">
+        <h2 class="title title--guarantees">Гарантии качества</h2>
+        <p class="guarantees__subtitle">Наши гарантии качества включают в себя полный спектр документов, необходимых для ввоза и вывоза товаров, а также для успешного бизнеса на мировом рынке. Мы предоставляем вам надёжность и уверенность</p>
+        <ul class="guarantees__list">
+            <li class="guarantees__item">
+                <picture><source srcset="/img/diplom1.webp" type="image/webp"><img class="guarantees__img" src="/img/diplom1.png" alt="Свидетельство о регистрации в РФ"></picture>
+                <p class="guarantees__txt">Свидетельство о регистрации в РФ</p>
+            </li>
+            <li class="guarantees__item">
+                <picture><source srcset="/img/diplom2.webp" type="image/webp"><img class="guarantees__img" src="/img/diplom2.png" alt="Свидетельство о регистрации в США"></picture>
+                <p class="guarantees__txt">Свидетельство о регистрации в США</p>
+            </li>
+            <li class="guarantees__item">
+                <picture><source srcset="/img/diplom3.webp" type="image/webp"><img class="guarantees__img" src="/img/diplom3.png" alt="Свидетельство о регистрации в Китае"></picture>
+                <p class="guarantees__txt">Свидетельство о регистрации в Китае</p>
+            </li>
+            <li class="guarantees__item">
+                <picture><source srcset="/img/diplom4.webp" type="image/webp"><img class="guarantees__img" src="/img/diplom4.png" alt="Свидетельство о регистрации в Великобритнии"></picture>
+                <p class="guarantees__txt">Свидетельство о регистрации в Великобритнии</p>
+            </li>
+        </ul>
+        <button class="button button--guarantees" type="button">Показать больше документов</button>
+    </div>
+</section>
+            <section class="reviews">
+    <div class="reviews__inner">
+        <h2 class="title title--reviews">Отзывы</h2>
+        <!-- Слайдер -->
+        <div class="reviews__slider">
+            <!-- Главный контейнер слайдера -->
+            <div class="swiper">
+                <!-- Дополнительная оболочка -->
+                <div class="swiper-wrapper">
+                    <!-- Слайды -->
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Я заказала последний iPhone из США через ваш сервис, и доставка прошла быстро и без каких‑либо проблем. Гарантии качества и надёжная упаковка сделали мой опыт покупки невероятно позитивным</p>
+                        <p class="swiper-autor">Анна</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Я уже несколько лет заказываю дизайнерскую одежду из Франции через ваш сервис, и он никогда меня не подводил. Важно иметь надёжную компанию, которая позаботится о вашем заказе и предоставит все необходимые документы для ввоза в Россию</p>
+                        <p class="swiper-autor">Алексей</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Я уже несколько лет заказываю дизайнерскую одежду из Франции через ваш сервис, и он никогда меня не подводил. Важно иметь надежную компанию, которая позаботится о вашем заказе и предоставит все необходимые документы для ввоза в Россию</p>
+                        <p class="swiper-autor">Ольга</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Заказал шикарные часы из Швейцарии, и доставка была невероятно быстрой. Ваш сервис делает интернет-шоппинг более доступным и удобным</p>
+                        <p class="swiper-autor">Игорь</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Ваш сервис действительно изменил мой способ покупок. Я больше не переживаю о таможенных вопросах и документах - все у вас в порядке. Спасибо за ваше качество и надежность</p>
+                        <p class="swiper-autor">Екатерина</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p class="swiper-post">Я заказал редкий антикварный предмет из Японии через ваш сервис, и остался впечатлен. Все пришло в отличном состоянии, и ваша гарантия качества действительно работает. Спасибо за ваше профессиональное обслуживание</p>
+                        <p class="swiper-autor">Дмитрий</p>
+                    </div>
+                </div>
+                <!-- Если нам нужна разбивка на страницы -->
+                <!-- <div class="swiper-pagination"></div> -->            
+                <!-- Если нам нужна полоса прокрутки -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <!-- Если нам нужны навигационные кнопки -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>        
+    </div>
+</section>
+            <section class="questions">
+    <div class="questions__inner">
+        <h2 class="title title--questions">Остались вопросы?</h2>
+        <form class="questions__form" action="#!">
+            <div class="questions__block">
+                <input id="questions__name" class="questions__input" type="text" placeholder="Имя">
+                <label class="questions__label" for="questions__name">Имя:</label>
+                <input id="questions__email" class="questions__input" type="email" placeholder="Почта">
+                <label class="questions__label" for="questions__email">Почта:</label>
+                <input id="questions__phone" class="questions__input" type="tel" placeholder="Телефон">
+                <label class="questions__label" for="questions__phone">Телефон:</label>
+                <input id="questions__subject" class="questions__input" type="text" placeholder="Тема вопроса">
+                <label class="questions__label" for="questions__subject">Тема вопроса:</label>
+                <textarea id="questions__message" class="questions__textarea" name="message" cols="30" rows="10" placeholder="Сообщение..."></textarea>
+                <label class="questions__label" for="questions__message">Тема вопроса:</label>
+                <input class="button button--questions" type="submit" value="Оставить заявку">
+            </div>
+        </form>
+    </div>
+</section>
         </div>
     </main>    
-    @@include('html/footer.html', {})
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="logo logo--footer">
+                    <a class="logo__link" href="#"><picture><source srcset="img/logo.webp" type="image/webp"><img class="logo__img" src="img/logo.png" alt="FromBoard Delivery"></picture></a>
+                    <span class="logo__txt">FromBoard Delivery</span>
+                    <p class="logo__protection">2023 © Ни одно право не защищено, копируйте сколько влезет</p>
+                </div>
+                <nav class="menu menu--footer">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a class="menu__link" href="#">Калькулятор</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">О нас</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Гарантии</a></li>
+                        <li class="menu__item"><a class="menu__link" href="#">Отзывы</a></li>
+                        <!-- <li class="menu__item"><a class="menu__link button button--footer" href="#">Оставить заявку</a></li> -->
+                    </ul>
+                </nav>
+                <div class="phone phone--footer">
+                    <span class="phone__number">+7 (800) 123 45-67</span>
+                    <span class="phone__info">Звонки по России бесплатны</span>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__oferta">НЕ ЯВЛЯЕТСЯ ПУБЛИЧНОЙ ОФЕРТОЙ. Просим обратить внимание на то, что цены носят информационный и ознакомительный характер, а значит ни в какой мере не являются публичной офертой, которая определена в ст. 437 ГК РФ. Вся информация на сайте может содержать неточности, орфографические и иные ошибки, она не является полной, окончательно и исчерпывающей</p>
+                <p class="footer__copyright">Разработкой макета занимался <a class="footer__link" href="#">Васильев Александр | Что-то на IT’шном</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="js/modules/slider.js"></script>
     <script src="js/app.min.js"></script>
 </body>
